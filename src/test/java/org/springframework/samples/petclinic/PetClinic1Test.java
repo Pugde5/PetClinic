@@ -31,7 +31,7 @@ public class PetClinic1Test {
 	  js = (JavascriptExecutor) driver;
     } catch (Exception e)
     {
-      System.setProperty("webdriver.chrome.driver","/home/ubuntu/chromedriver/chrimedriver");    
+      System.setProperty("webdriver.chrome.driver","/home/ubuntu/chromedriver/chromedriver");    
   	  driver = new ChromeDriver();
   	  js = (JavascriptExecutor) driver;
     }
