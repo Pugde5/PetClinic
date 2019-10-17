@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -31,9 +32,13 @@ public class PetClinic1Test {
 	  js = (JavascriptExecutor) driver;
     } catch (Exception e)
     {
+    	e.printStackTrace();
     	try {
 	      System.setProperty("webdriver.chrome.driver","/home/ubuntu/chromedriver/chromedriver");    
-	  	  driver = new ChromeDriver();
+	      ChromeOptions chromeOptions = new ChromeOptions();
+          chromeOptions.addArguments("--headless");
+          chromeOptions.addArguments("--no-sandbox");
+	  	  driver = new ChromeDriver(chromeOptions);
 	  	  js = (JavascriptExecutor) driver;
     	} catch (Exception two) {
     		two.printStackTrace();
