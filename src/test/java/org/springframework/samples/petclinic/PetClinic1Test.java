@@ -26,8 +26,15 @@ public class PetClinic1Test {
   @Before
   public void setUp() {
 //	  System.setProperty("webdriver.chrome.driver","C:\\Program Files\\chrome\\chromedriver.exe");    
-    driver = new ChromeDriver();
-    js = (JavascriptExecutor) driver;
+    try {
+	  driver = new ChromeDriver();
+	  js = (JavascriptExecutor) driver;
+    } catch (Exception e)
+    {
+      System.setProperty("webdriver.chrome.driver","/home/ubuntu/chromedriver/chrimedriver");    
+  	  driver = new ChromeDriver();
+  	  js = (JavascriptExecutor) driver;
+    }
     vars = new HashMap<String, Object>();
   }
   @After
