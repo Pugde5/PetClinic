@@ -31,9 +31,13 @@ public class PetClinic1Test {
 	  js = (JavascriptExecutor) driver;
     } catch (Exception e)
     {
-      System.setProperty("webdriver.chrome.driver","/home/ubuntu/chromedriver/chromedriver");    
-  	  driver = new ChromeDriver();
-  	  js = (JavascriptExecutor) driver;
+    	try {
+	      System.setProperty("webdriver.chrome.driver","/home/ubuntu/chromedriver/chromedriver");    
+	  	  driver = new ChromeDriver();
+	  	  js = (JavascriptExecutor) driver;
+    	} catch (Exception two) {
+    		two.printStackTrace();
+    	}
     }
     vars = new HashMap<String, Object>();
   }
